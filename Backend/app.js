@@ -10,7 +10,7 @@ const Favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
 
-app.use(cors());;
+app.use(cors());
 app.use(express.json());
 
 // app.get("/", (req, res) => {

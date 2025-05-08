@@ -22,7 +22,7 @@ const AllOrders = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/get-all-orders",
+          `${import.meta.env.VITE_BACKEND_URL}/get-all-orders`,
           { headers }
         );
         setAllOrders(response.data.data);
@@ -37,7 +37,7 @@ const AllOrders = () => {
     const id = allOrders[i]._id;
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v1/update-status/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/update-status/${id}`,
         values,
         { headers }
       );

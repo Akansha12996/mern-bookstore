@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BookCard from "../BookCard/BookCard";
-
+import Loader from "../Loader/Loader";
 const RecentlyAdded = () => {
   const [data, setData] = useState([]);
 
@@ -9,7 +9,7 @@ const RecentlyAdded = () => {
     const fetchBooks = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/get-recent-books"
+          `${import.meta.env.VITE_BACKEND_URL}/get-recent-books`
         );
         setData(response.data.data);
       } catch (error) {

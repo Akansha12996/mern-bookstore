@@ -20,7 +20,7 @@ const Profile = () => {
           authorization: `Bearer ${token}`,
         };
         const response = await axios.get(
-          "http://localhost:3000/api/v1/get-user-information",
+          `${import.meta.env.VITE_BACKEND_URL}/get-user-information`,
           { headers }
         );
 

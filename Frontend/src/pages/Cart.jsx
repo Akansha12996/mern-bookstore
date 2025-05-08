@@ -18,7 +18,7 @@ const Cart = () => {
     const fetchCart = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/api/v1/get-user-cart",
+          `${import.meta.env.VITE_BACKEND_URL}/get-user-cart`,
           { headers }
         );
         setCart(response.data.data);
@@ -33,7 +33,7 @@ const Cart = () => {
   const deleteItem = async (bookid) => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/v1/remove-from-cart/${bookid}`,
+        `${import.meta.env.VITE_BACKEND_URL}/remove-from-cart/${bookid}`,
         {},
         {
           headers,
@@ -48,7 +48,7 @@ const Cart = () => {
   const PlaceOrder = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/place-order",
+        `${import.meta.env.VITE_BACKEND_URL}/place-order`,
         { order: Cart },
         { headers: headers } // Ensure headers are correctly formatted
       );

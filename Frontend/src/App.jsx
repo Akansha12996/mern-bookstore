@@ -17,7 +17,7 @@ import UserOrderHistory from "./components/Profile/UserOrderHistory";
 import Settings from "./components/Profile/Settings";
 import AllOrders from "./pages/AllOrders";
 import AddBook from "./pages/AddBook";
-import UpdateBook from "./pages/updateBook";
+import UpdateBook from "./pages/UpdateBook";
 const App = () => {
   const dispatch = useDispatch();
   const role = useSelector((state) => state.auth.role);
