@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "build": [
+  "builds": [
     {
-      "src": "*.js",
+      "src": "index.js",  // or your entry file like api/index.js
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "index.js"  // or match the file in 'builds'
     }
   ]
 }
